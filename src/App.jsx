@@ -1,12 +1,25 @@
 import React from 'react'
-import HomeScreen from './components/HomeScreen'
+import Home from './components/Home'
+import styled from 'styled-components'
 
 function App() {
   return (
-    <div className="app">
-      <HomeScreen />
-    </div>
+    <Wrapper>
+      <div className="app">
+        <Home />
+      </div>
+    </Wrapper>
   )
 }
+
+const Wrapper = styled.div`
+  .app {
+    background-color: #111;
+  }
+
+  .app::-webkit-scrollbar {
+    display: none;
+  }
+`
 
 export default App
