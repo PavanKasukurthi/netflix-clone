@@ -2,7 +2,6 @@
 
 // console.log(REACT_APP_API_KEY)
 
-// const API_KEY = 'c8242884ea11043ee8682ec5dc02f132'
 const API_KEY = '22b60bbd4026364c63e3b2c253735098'
 
 const requests = {
