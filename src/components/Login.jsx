@@ -9,42 +9,40 @@ const Login = () => {
   return (
     <Wrapper>
       <div className="loginScreen">
-        <div className="loginScreen-background">
-          <img className="loginScreen-logo" src={logo} alt="Login logo" />
-
+        <div className="loginScreen__background">
+          <img className="loginScreen__logo" src={logo} alt="" />
           <button
             onClick={() => setSignIn(true)}
-            className="loginScreen-button"
+            className="loginScreen__button"
           >
             Sign In
           </button>
-          <div className="loginScreen-gradient" />
-          <div className="loginScreen-body">
-            {signIn ? (
-              <SignIn />
-            ) : (
-              <>
-                <h1>Unlimited films, TV programmes and more.</h1>
-                <h2>Watch anywhere. Cancel at any time.</h2>
-                <h3>
-                  Ready to watch? Enter your email to create or restart your
-                  membership.
-                </h3>
-
-                <div className="loginScreen-input">
-                  <form action="">
-                    <input type="email" placeholder="Email Address" />
-                    <button
-                      onClick={() => setSignIn(true)}
-                      className="loginScreen-getStarted"
-                    >
-                      GET STARTED
-                    </button>
-                  </form>
-                </div>
-              </>
-            )}
-          </div>
+          <div className="loginScreen__gradient" />
+        </div>
+        <div className="loginScreen__body">
+          {signIn ? (
+            <SignIn />
+          ) : (
+            <>
+              <h1>Unlimited films, TV programs and more.</h1>
+              <h2>Watch anywhere. Cancel at anytime.</h2>
+              <h3>
+                Ready to watch? Enter your email to create or restart your
+                membership.
+              </h3>
+              <div className="loginScreen__input">
+                <form action="">
+                  <input type="email" placeholder="Email Address" />
+                  <button
+                    onClick={() => setSignIn(true)}
+                    className="loginScreen__getStarted"
+                  >
+                    GET STARTED
+                  </button>
+                </form>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </Wrapper>
@@ -55,40 +53,33 @@ const Wrapper = styled.div`
   .loginScreen {
     position: relative;
     height: 100%;
-    background: url('https://isquad.tv/wp-content/uploads/2018/08/Netflix-Background.jpg')
+    background: url('https://cdn.mos.cms.futurecdn.net/rDJegQJaCyGaYysj2g5XWY.jpg')
       center no-repeat;
     background-size: cover;
   }
 
-  .loginScreen-body > h1 {
-    font-size: 3.125rem;
-    margin-bottom: 20px;
+  .loginScreen__logo {
+    position: fixed;
+    left: 0;
+    width: 150px;
+    object-fit: contain;
+    padding-left: 20px;
   }
 
-  .loginScreen-body > h2 {
-    font-size: 2rem;
-    font-weight: 400;
-    margin-bottom: 30px;
+  .loginScreen__button {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #e50914;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
   }
 
-  .loginScreen-body > h3 {
-    font-size: 1.3rem;
-    font-weight: 400;
-  }
-
-  .loginScreen-body {
-    position: absolute;
-    top: 30%;
-    left: 10%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    z-index: 1;
-    padding: 20px;
-    color: white;
-  }
-
-  .loginScreen-gradient {
+  .loginScreen__gradient {
     width: 100%;
     z-index: 1;
     height: 100vh;
@@ -97,35 +88,40 @@ const Wrapper = styled.div`
       to top,
       rgba(0, 0, 0, 0.8) 0,
       rgba(0, 0, 0, 0) 60%,
-      rgba(0, 0, 0, 0.8) 100%
+      rgba(0, 0, 0, 0) 100%
     );
   }
 
-  .loginScreen-logo {
-    position: fixed;
+  .loginScreen__body {
+    position: absolute;
+    top: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    z-index: 1;
+    color: #fff;
+    padding: 20px;
     left: 0;
-    width: 150px;
-    object-fit: contain;
-    padding-left: 20px;
-    cursor: pointer;
+    right: 0;
   }
 
-  .loginScreen-button {
-    position: fixed;
-    right: 20px;
-    top: 20px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    object-fit: contain;
-    background-color: #e50914;
-    color: white;
-    border: none;
-    font-weight: 600;
-    border-radius: 0.25rem;
-    cursor: pointer;
+  .loginScreen__body > h1 {
+    font-size: 3.125rem;
+    margin-bottom: 20px;
   }
 
-  .loginScreen-input > form > input {
+  .loginScreen__body > h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 30px;
+  }
+
+  .loginScreen__body > h3 {
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
+
+  .loginScreen__input > form > input {
     padding: 10px;
     outline-width: 0;
     height: 30px;
@@ -134,18 +130,18 @@ const Wrapper = styled.div`
     max-width: 600px;
   }
 
-  .loginScreen-input {
-    margin: 20px;
-  }
-
-  .loginScreen-getStarted {
+  .loginScreen__getStarted {
     padding: 16px 20px;
     font-size: 1rem;
-    color: white;
+    color: #fff;
     background-color: #e50914;
     border: none;
-    cursor: pointer;
     font-weight: 600;
+    cursor: pointer;
+  }
+
+  .loginScreen__input {
+    margin: 20px;
   }
 `
 
