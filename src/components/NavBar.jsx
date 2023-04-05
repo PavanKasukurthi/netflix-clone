@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import logo from '../assets/logo.png'
 import avatar from '../assets/Netflix-avatar.png'
+import { Navigate, useNavigate } from 'react-router-dom'
 
 const NavBar = () => {
   const [show, setShow] = useState(false)
+  const navigate = useNavigate()
 
   const transitionNavbar = () => {
     if (window.scrollY > 100) {
@@ -22,8 +24,18 @@ const NavBar = () => {
   return (
     <Wrapper>
       <div className={`nav ${show && 'nav__black'}`}>
-        <img className="nav__logo" src={logo} alt="Netflix Logo" />
-        <img className="nav__avatar" src={avatar} alt="Netflix Logo" />
+        <img
+          onClick={() => navigate('/')}
+          className="nav__logo"
+          src={logo}
+          alt="Netflix Logo"
+        />
+        <img
+          onClick={() => navigate('/profile')}
+          className="nav__avatar"
+          src={avatar}
+          alt="Netflix Logo"
+        />
       </div>
     </Wrapper>
   )
@@ -40,6 +52,10 @@ const Wrapper = styled.div`
     /* Animations */
     transition-timing-function: ease-in;
     transition: all 0.5s;
+  }
+
+  img {
+    cursor: pointer;
   }
 
   .nav__black {

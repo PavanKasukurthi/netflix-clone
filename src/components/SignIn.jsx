@@ -45,7 +45,7 @@ const SignIn = () => {
           <h1>Sign In</h1>
           <input ref={emailRef} type="email" placeholder="Email Address" />
           <input ref={passwordRef} type="password" placeholder="Password" />
-          <button type="submit">Sign In</button>
+          <button onClick={signIn} type="submit">Sign In</button>
 
           <h4>
             <span className="gray" onClick={signIn}>
