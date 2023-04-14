@@ -68,6 +68,7 @@ const Wrapper = styled.div`
 
   .row-poster:hover {
     transition-timing-function: ease-in;
+    cursor: pointer;
     transform: scale(1.08);
   }
 
